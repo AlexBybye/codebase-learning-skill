@@ -27,6 +27,14 @@ description: Learn an unfamiliar repository from current source and configuratio
 
 将 `evidence` 写成相对 `target_root` 的 ``path/to/file#symbol``、``path/to/file#key`` 或 ``path/to/file:Lx-Ly``。优先引用符号；禁止用绝对路径、仅文件名、旧分析文档或仓库说明文字替代实现证据。续跑时可以把既有分析产物当缓存，但最终关键结论仍须保留其源码或配置锚点。
 
+## 统一解释合同
+
+取证后、写入学习地图前做一次忠实解释，不二次分析：
+
+1. 每个单元按“作用 → 入口 → 流转 → 结果与边界 → 证据”组织；先用一句话说明作用，再展开真实符号和调用链。首次术语保留原名并简释。
+2. 标识符、路径、配置键、代码、精确 JSON、状态/锚点，以及事实、数字、条件、范围、不确定性和 `source/evidence` 不变；不得把 `inferred` 或 `unavailable` 写成事实。
+3. 类比须标注且不能充当证据。写入前对照证据台账和域合同复核；表达自然与技术精度冲突时，以精度为准。
+
 ## 执行流程
 
 ### 1. 固定输出合同并读取续跑状态
@@ -120,7 +128,7 @@ description: Learn an unfamiliar repository from current source and configuratio
 
 混合仓库至少输出一条证据相连的端到端路径，例如 UI → API → persistence，或 UI/API → retrieval → model → structured output/citation。每一跳单独标注 `source` 和 `evidence`；缺失的中间连接必须显式显示，不得用常见架构补齐。
 
-### 5. 幂等生成学习地图
+### 5. 经统一解释层幂等生成学习地图
 
 按稳定单元 ID 和相对路径排序，重建目标学习地图，不在文件尾部盲目追加。
 
@@ -130,7 +138,7 @@ description: Learn an unfamiliar repository from current source and configuratio
 - 不写当前时间、随机 ID 或遍历顺序等不稳定内容。相同输入与状态再次执行应得到相同文件内容。
 - 只覆盖本任务约定的分析产物；不得清理或重写 `doc/analysis/` 中无关文件。
 
-学习地图至少包含：
+先按统一解释合同组织各单元，再生成学习地图。学习地图至少包含：
 
 1. **范围与静态边界**：目标范围、排除项、不能由源码证明的内容。
 2. **路由摘要**：五域的 `relevant/skipped`、理由、`source` 和 `evidence`。

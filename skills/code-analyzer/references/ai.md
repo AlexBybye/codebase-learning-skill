@@ -46,7 +46,7 @@ user/API input
   → citation or response
 ```
 
-每一跳写真实函数和 `source/evidence`。引用必须追到 chunk/document metadata 如何映射到最终输出；只看到模型生成文本而没有映射实现时，把 citation 标为 `unavailable`。若入口位于 web/mobile/backend，复用对应域的入口和 handler 证据。
+引用必须追到 chunk/document metadata 如何映射到最终输出；只看到模型生成文本而没有映射实现时，把 citation 标为 `unavailable`。若入口位于 web/mobile/backend，复用对应域的入口和 handler 证据。
 
 ## 关键合同
 
@@ -64,11 +64,6 @@ user/API input
 
 ## 输出重点
 
-AI 学习地图必须包含：
+在统一解释结构中，必须包含阶段状态表及证据、至少一条当前源码可闭合的 AI 主路径、与 UI/API/data 的跨域边、存在的 prompt/model/structured-output/citation 合同，以及 evaluation、safety/privacy、cost/latency、fallback 的存在或缺失边界。
 
-- 阶段状态表及每项证据；
-- 至少一条当前源码可闭合的 AI 主路径；
-- 与 UI/API/data 的跨域边；
-- prompt/model/structured-output 或 citation 合同（存在时）；
-- evaluation、safety/privacy、cost/latency 和 fallback 的存在或缺失边界；
-- 对线上质量、性能、成本、安全和部署状态的明确静态分析限制。
+结尾明确说明静态源码无法证明线上质量、性能、成本、安全或部署状态。

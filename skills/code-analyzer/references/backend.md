@@ -37,16 +37,10 @@ schedule/queue → worker/job → service/domain → persistence/integration →
 CLI registration → command handler → service/domain → output/exit state
 ```
 
-不要求每条链包含每一层。每一条边都写 `source/evidence`；只找到客户端调用却找不到入站注册时，把服务端边界标为 `unavailable`。
+不要求每条链包含每一层。只找到客户端调用却找不到入站注册时，把服务端边界标为 `unavailable`。
 
 ## 输出重点
 
-对每个 Backend 单元记录：
-
-- trigger 类型、路径/topic/schedule/command 与注册证据；
-- 输入解析、校验、鉴权和 middleware 顺序；
-- 核心业务分支与状态变化；
-- 持久化、cache、queue 和外部集成边；
-- response/ack、错误映射、retry 或 fallback。
+在统一解释结构中，重点说明 trigger 类型及注册，输入解析、校验、鉴权和 middleware 顺序，核心业务分支与状态变化，持久化/cache/queue/外部集成，以及 response/ack、错误映射、retry 或 fallback。
 
 仓库没有 UI 时不要生成 page、card、组件或移动端单元。不要从源码结构推断该入口已在线上暴露或具备生产流量。

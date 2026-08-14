@@ -38,16 +38,10 @@ route/page entry
   → render or navigation result
 ```
 
-对每一跳记录真实符号和 `source/evidence`。客户端请求只能追到源码可见的 URL、请求函数或 server action；若服务端实现不在仓库内，将下一跳标为 `unavailable`。若相邻 `backend` 域 relevant，则复用其 handler 证据，不重新扫描服务端目录。
+客户端请求只能追到源码可见的 URL、请求函数或 server action；若服务端实现不在仓库内，将下一跳标为 `unavailable`。若相邻 `backend` 域 relevant，则复用其 handler 证据，不重新扫描服务端目录。
 
 ## 输出重点
 
-对每个 Web 单元记录：
+在统一解释结构中，重点说明入口 URL/route 与注册、页面和关键组件层级、状态的写入与 UI 消费、用户操作或加载到导航/失败/空态的过程，以及到 backend 或外部服务的已证明边。
 
-- 入口 URL/route 与注册位置；
-- 页面和关键组件层级，不猜测像素或设计 token；
-- 状态字段、写入位置和 UI 消费位置；
-- 用户操作、数据加载、导航与失败/空态；
-- 到 backend 或外部服务的已证明边。
-
-不要生成移动端生命周期、卡片模板或未在源码出现的设计系统名称。
+不猜测像素或 design token，不生成移动端生命周期、卡片模板或未在源码出现的设计系统名称。

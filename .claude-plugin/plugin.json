@@ -1,7 +1,7 @@
 {
   "name": "code-analyzer",
   "description": "Evidence-bounded repository learning maps for web, mobile, backend, data/infra, AI, and mixed codebases.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Code Analyzer Contributors"
   }
